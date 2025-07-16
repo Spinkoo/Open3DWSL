@@ -22,7 +22,8 @@ sudo apt upgrade
 ```bash
 sudo apt install python3
 sudo apt install --reinstall python3-pip
-sudo apt install python3-env
+sudo apt install python3-venv
+sudo apt install python3-dev
 ```
 ---
 
@@ -33,11 +34,20 @@ sudo apt install python3-env
 sudo apt install g++-11
 sudo apt install clang-15 libc++-15-dev libc++abi-15-dev
 sudo apt install gcc
+sudo apt install build-essential
 ```
 
 ---
 
-## 4. Install CUDA 12.4 (with toolkit option checked)
+## 4. Create a python Virtual Environment
+
+```bash
+python3 -m venv <env-name>
+source env-name/bin/activate
+```
+---
+
+## 5. Install CUDA 12.4 (with toolkit option checked)
 
 ```bash
 mkdir cuda && cd cuda
@@ -54,7 +64,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 
 ---
 
-## 5. Check CUDA Tools
+## 6. Check CUDA Tools
 
 ```bash
 which cicc
@@ -73,7 +83,7 @@ sudo ln -s /usr/local/cuda-12.4/bin/ptxas /usr/bin/ptxas
 
 ---
 
-## 6. Install CMake
+## 7. Install CMake
 
 You could either install a recent version of CMake or download the already tested v3.29.3 (stable on WSL).
 
@@ -96,7 +106,7 @@ cmake --version
 
 ---
 
-## 7. Install essentials
+## 8. Install essentials
 
 ```bash
 sudo apt install libglew-dev libxkbcommon-dev xorg-dev libglu1-mesa-dev libwayland-dev
@@ -105,7 +115,7 @@ sudo apt install libglew-dev libxkbcommon-dev xorg-dev libglu1-mesa-dev libwayla
 
 ---
 
-## 8. Build Open3D from Source
+## 9. Build Open3D from Source
 
 ```bash
 git clone https://github.com/isl-org/Open3D && cd Open3D
@@ -128,15 +138,16 @@ mkdir build && cd build
 
 ---
 
-## 9. CMake Build Command
+
+## 10. CMake Build Command
 
 ```bash
-cmake -DBUILD_CUDA_MODULE=ON -DBUILD_PYTHON_MODULE=ON -DPYTHON_EXECUTABLE=$(which python) -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -DCMAKE_INSTALL_PREFIX=~/open3d_install -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -D CMAKE_CUDA_ARCHITECTURES="86;89" -DBUILD_GUI=ON -DCMAKE_CUDA_COMPILER=/usr/local/cuda-12.4/bin/nvcc ..
+cmake -DCMAKE_CXX_COMPILER="/usr/bin/g++-11" -DBUILD_CUDA_MODULE=ON -DBUILD_PYTHON_MODULE=ON -DPYTHON_EXECUTABLE=$(which python) -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -DCMAKE_INSTALL_PREFIX=~/open3d_install -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -D CMAKE_CUDA_ARCHITECTURES="86;89" -DBUILD_GUI=ON -DCMAKE_CUDA_COMPILER=/usr/local/cuda-12.4/bin/nvcc ..
 ```
 
 ---
 
-## 10. Build
+## 11. Build
 
 > Either limit the number of jobs or increase the WSL swap memory
 
@@ -145,13 +156,6 @@ make -j2
 ```
 ---
 
-## 11. Create Virtual Environment
-
-```bash
-python3 -m venv <env-name>
-source env-name/bin/activate
-```
----
 ## 12. Make the pip wheel & install it
 Once the build is complete and you are inside your python virtual environment, run 
 ```
