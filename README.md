@@ -1,6 +1,6 @@
 # Open3D GPU Build on Windows (WSL) – Install Guide
 
-Do you need to build Open3D from source with GPU support on Windows? I suppose you have your reasons the same way I did when I was navigating through forums to solve the issue.
+Do you need to build Open3D from source with GPU support on Windows? No judging I suppose you have your reasons the same way I did when I was navigating through forums to solve the issue.
 
 Ideally, you would install it on WSL (Ubuntu) for maximum support, which you could use later on for your Python virtual environment to run your codes.
 
