@@ -155,3 +155,5 @@ Once the build is complete and you are inside your python virtual environment, r
 ```
 make install-pip-package
 ```
+## 13. Minimalist test to check cuda :
+check the [sample](/test.py)
