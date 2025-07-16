@@ -167,7 +167,7 @@ make install-pip-package
 python -c "import open3d; print(open3d.core.cuda.is_available())"
 ```
 
- > Check the [sample](/test.py) for basic usage
+ > Check the [base sample](/test.py) & [interactive example](/interactive_visualization.py) for simple usage
 
 # Acknwoledgement
 [Open3D](https://github.com/isl-org/Open3D)
