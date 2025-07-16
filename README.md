@@ -156,4 +156,8 @@ Once the build is complete and you are inside your python virtual environment, r
 make install-pip-package
 ```
 ## 13. Minimalist test to check cuda :
-check the [sample](/test.py)
+```
+python -c "import open3d; print(open3d.core.cuda.is_available())"
+```
+
+ > Check the [sample](/test.py) for basic usage
