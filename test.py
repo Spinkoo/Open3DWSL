@@ -1,5 +1,5 @@
 import open3d as o3d, numpy as np, open3d.core as o3c
-print(o3c.cuda.is_available())
+print("CUDA is available: ", o3c.cuda.is_available())
 
 device = o3d.core.Device("cuda:0")
 #device = o3d.core.Device("cpu:0")
