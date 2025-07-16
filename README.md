@@ -159,6 +159,7 @@ make -j2
 ## 12. Make the pip wheel & install it
 Once the build is complete and you are inside your python virtual environment, run 
 ```
+pip install setuptools
 make install-pip-package
 ```
 ## 13. Minimalist test to check cuda :
