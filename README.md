@@ -26,7 +26,18 @@ sudo apt install python3-env
 ```
 ---
 
-## 3. Install CUDA 12.4 (with toolkit option checked)
+
+## 3. Install C Compilers
+
+```bash
+sudo apt install g++-11
+sudo apt install clang-15 libc++-15-dev libc++abi-15-dev
+sudo apt install gcc
+```
+
+---
+
+## 4. Install CUDA 12.4 (with toolkit option checked)
 
 ```bash
 mkdir cuda && cd cuda
@@ -43,7 +54,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 
 ---
 
-## 4. Check CUDA Tools
+## 5. Check CUDA Tools
 
 ```bash
 which cicc
@@ -62,7 +73,7 @@ sudo ln -s /usr/local/cuda-12.4/bin/ptxas /usr/bin/ptxas
 
 ---
 
-## 5. Install CMake
+## 6. Install CMake
 
 You could either install a recent version of CMake or download the already tested v3.29.3 (stable on WSL).
 
@@ -81,15 +92,6 @@ Check version:
 ```bash
 cmake --version
 # should print cmake version 3.29.3
-```
-
----
-
-## 6. Install C Compilers
-
-```bash
-sudo apt install g++-11
-sudo apt install clang-15 libc++-15-dev libc++abi-15-dev
 ```
 
 ---
