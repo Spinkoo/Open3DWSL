@@ -99,7 +99,7 @@ cmake --version
 ## 7. Install essentials
 
 ```bash
-sudo apt install libglew-dev libxkbcommon-dev xorg-dev libglu1-mesa-dev ibwayland-dev
+sudo apt install libglew-dev libxkbcommon-dev xorg-dev libglu1-mesa-dev libwayland-dev
 
 ```
 
