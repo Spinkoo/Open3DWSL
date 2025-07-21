@@ -6,7 +6,7 @@ Do you need to build Open3D from source with GPU support on Windows? No judging 
 
 Ideally, you would install it on WSL (Ubuntu) for maximum support, which you could use later on for your Python virtual environment to run your codes.
 <p align="center">
-  <img src="images/cover.PNG" />
+  <img src="images/cover.png" />
 </p>
 
 # Let's get started! :D
