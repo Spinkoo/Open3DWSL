@@ -1,9 +1,13 @@
 # Open3D GPU Build on Windows (WSL) – Install Guide
-
+<p align="center">
+  <img src="images/wsl.png" />
+</p>
 Do you need to build Open3D from source with GPU support on Windows? No judging I suppose you have your reasons the same way I did when I was navigating through forums to avoid building directly on windows.
 
 Ideally, you would install it on WSL (Ubuntu) for maximum support, which you could use later on for your Python virtual environment to run your codes.
-![](images/cover.PNG)
+<p align="center">
+  <img src="images/cover.PNG" />
+</p>
 
 # Let's get started! :D
 
@@ -167,10 +171,14 @@ make install-pip-package
 ```
 python -c "import open3d; print(open3d.core.cuda.is_available())"
 ```
-![](images/test.PNG)
+<p align="center">
+  <img src="images/test.PNG" />
+</p>
 
  > Check the [base sample](/test.py) & [This demo from Open3D examples](/interactive_visualization.py) for simple usage
- ![](images/demo.PNG)
+<p align="center">
+  <img src="images/demo.PNG" />
+</p>
 
 # Acknwoledgement
 [Open3D](https://github.com/isl-org/Open3D)
