@@ -3,6 +3,7 @@
 Do you need to build Open3D from source with GPU support on Windows? No judging I suppose you have your reasons the same way I did when I was navigating through forums to avoid building directly on windows.
 
 Ideally, you would install it on WSL (Ubuntu) for maximum support, which you could use later on for your Python virtual environment to run your codes.
+![](images/cover.PNG)
 
 # Let's get started! :D
 
@@ -142,7 +143,7 @@ mkdir build && cd build
 ## 10. CMake Build Command
 
 ```bash
-cmake -DCMAKE_CXX_COMPILER="/usr/bin/g++-11" -DBUILD_CUDA_MODULE=ON -DBUILD_PYTHON_MODULE=ON -DPYTHON_EXECUTABLE=$(which python) -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -DCMAKE_INSTALL_PREFIX=~/open3d_install -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -D CMAKE_CUDA_ARCHITECTURES="86;89" -DBUILD_GUI=ON -DCMAKE_CUDA_COMPILER=/usr/local/cuda-12.4/bin/nvcc ..
+cmake -DCMAKE_CXX_COMPILER="/usr/bin/g++-11" -DBUILD_CUDA_MODULE=ON -DBUILD_PYTHON_MODULE=ON -DPYTHON_EXECUTABLE=$(which python) -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -DCMAKE_INSTALL_PREFIX=~/open3d_install -D CUDA_TOOLKIT_ROOT_DIR="/usr/local/cuda-12.4" -D CMAKE_CUDA_ARCHITECTURES="75" -DBUILD_GUI=ON -DCMAKE_CUDA_COMPILER=/usr/local/cuda-12.4/bin/nvcc ..
 ```
 
 ---
@@ -166,8 +167,10 @@ make install-pip-package
 ```
 python -c "import open3d; print(open3d.core.cuda.is_available())"
 ```
+![](images/test.PNG)
 
- > Check the [base sample](/test.py) & [interactive example](/interactive_visualization.py) for simple usage
+ > Check the [base sample](/test.py) & [This demo from Open3D examples](/interactive_visualization.py) for simple usage
+ ![](images/demo.PNG)
 
 # Acknwoledgement
 [Open3D](https://github.com/isl-org/Open3D)
